@@ -1,6 +1,5 @@
 #Se importan las biblio tecas para poder manipular el codigo
 from biblioteca_libros.biblioteca_libors import Biblioteca
-from biblioteca_libros.biblioteca_libors import Libro
 
 library = Biblioteca("Biblioteca Vicente INsano:p")
 #Aca se agregan los registros de libros:
@@ -12,6 +11,7 @@ library.RegistroLibro("Golden Wind", "Hirohiko Araki",40)
 library.RegistroLibro("Stone Ocean", "Hirohiko Araki",10)
 library.RegistroLibro("Steel Ball Run", "Hirohiko Araki",40)
 library.RegistroLibro("JoJolion", "Hirohiko Araki", 18)
+
 #Esta opcion muestra el catalogo
 
 library.Catalogo()
@@ -36,4 +36,3 @@ library.Devolucion(titulo,cantidad)
 
 titulo = input("Ingrese el libro que quire ver el catalogo actualizado: ")
 library.EstadoActualizado(titulo)
-
