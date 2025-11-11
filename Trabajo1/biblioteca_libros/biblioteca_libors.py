@@ -20,7 +20,7 @@ class Biblioteca:
         else:
             print("El catalogo de la Biblioteca es:","\n")
             for libro in self.libros.values():
-                print(f"Ttitulo: {libro.titulo}|Autor: {libro.autor}|Copias disponibles: {libro.copias}")
+                print(f"Titulo: {libro.titulo}|Autor: {libro.autor}|Copias disponibles: {libro.copias}")
                 
     def LibroTitulo(self, titulo):
         if titulo in self.libros:
@@ -54,7 +54,7 @@ class Biblioteca:
 
     def EstadoActualizado(self, titulo):
         if titulo in self.libros:
-            Libro = self.libros[titulo]
+            libro = self.libros[titulo]
             print(f"El libro es: {libro.titulo}, | El autor es : {libro.autor} | Las cantidades son: {libro.copias}")
         else:
             print("Este libro no se encuentra en el catalogo.")

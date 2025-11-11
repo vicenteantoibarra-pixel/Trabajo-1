@@ -1,22 +1,41 @@
-# Diseñe un sistema sencillo para gestionar la inscripción de alumnos en un curso. Cada alumno debe
-# estar identificado por su nombre. El curso debe tener un nombre y mantener el listado de alumnos
-# inscritos, permitiendo agregar nuevos alumnos, retirar alumnos existentes y consultar en cualquier
-# momento quiénes forman parte del curso.
-# • El sistema debe permitir definir un nuevo curso, indicando su nombre.
-# • El sistema debe permitir registrar un nuevo alumno, indicando su nombre, y inscribirlo en el
-# curso.
-# • El sistema debe permitir remover a un alumno del curso, de modo que ya no aparezca en el
-# listado de inscritos.
-# • El sistema debe permitir listar todos los alumnos inscritos en el curso, mostrando al menos su
-# nombre.
-# • Si se intenta remover a un alumno que no está inscrito, el sistema debe informarlo claramente.
-# • El sistema debe ofrecer una forma de consultar el estado actualizado del curso, es decir, su
-# nombre y el listado actual de alumnos inscritos.
-from Trabajo1.alumno_curso.alumno import Alumno
-
+from alumno_curso.alumno import Alumno
+import time
 class Curso:
-    def __init__(self,nombreColegio):
-        self.nombreColegio = nombreColegio
-        
+    def __init__(self,nombreCurso):
+        self.nombreCurso = nombreCurso
+        self.alumnos = []
 
-    def AgregarAlumno
+    def AgregarAlumno (self,nombre):
+        nuevo = Alumno(nombre)
+        self.alumnos.append(nuevo)
+        
+    def DeleteAlumno (self,nombre):
+        for alumno in self.alumnos: 
+            if alumno.nombre == nombre:
+                time.sleep(5)
+                self.alumnos.remove(alumno)
+                print(f"Alumno {nombre} fue eliminado del curso exitosamente")
+                return
+        print(f"El nombre {nombre} no fue encontrado e el curso")
+    
+    def List (self):
+        if not self.alumnos:
+            print("No hay alumnos en este curso")
+        else:
+            print("El listado de alumnos es el siguiente: ", "\n")
+            for alumno in self.alumnos:
+                print(f"|Alumno: {alumno.nombre}|")
+    
+    def EstadoCurso(self):
+        estado = f"Curso: {self.nombreCurso}\n"
+        estado += "Alumnos inscritos: \n"
+        
+        if not self.alumnos:
+            esatdo += f"|Ninguno|\n"
+        else:
+            for alumno in self.alumnos:
+                estado += f"|{alumno.nombre}|\n"
+        return estado            
+                   
+            
+        
